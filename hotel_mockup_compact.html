@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MogoHotel - Luxury Hotel Chain</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1a1a1a;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .btn-login, .btn-book {
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-login {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        .btn-login:hover {
+            background: #fff;
+            color: #1a1a1a;
+        }
+
+        .btn-book {
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-book:hover {
+            background: #e55555;
+        }
+
+        /* Hero Section - КОМПАКТНЕЕ */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #e55555;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #667eea;
+        }
+
+        /* Features Section - КОМПАКТНЕЕ */
+        .features {
+            padding: 2.5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.4rem;
+            color: #667eea;
+            font-size: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Hotels Section - КОМПАКТНЕЕ */
+        .hotels {
+            padding: 2.5rem 2rem;
+        }
+
+        .hotels-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hotels-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .hotel-card {
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hotel-image {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .hotel-info {
+            padding: 1rem;
+        }
+
+        .hotel-info h3 {
+            margin-bottom: 0.3rem;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+        }
+
+        .hotel-rating {
+            color: #ff6b6b;
+            margin-bottom: 0.3rem;
+            font-size: 0.8rem;
+        }
+
+        .hotel-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 0.3rem 0;
+        }
+
+        .hotel-description {
+            color: #666;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .btn-view {
+            width: 100%;
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .btn-view:hover {
+            background: #5568d3;
+        }
+
+        /* Footer - КОМПАКТНЕЕ */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 2rem 2rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 0.8rem;
+            color: #ff6b6b;
+            font-size: 0.95rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 0.4rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b6b;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* Chat Widget - ФИКСИРОВАННАЯ ПОЗИЦИЯ */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 320px;
+            height: 450px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+            display: flex;
+            flex-direction: column;
+            z-index: 10000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 1rem;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .chat-close:hover {
+            transform: scale(1.2);
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            background: #f5f5f5;
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 0.3rem;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 0.7rem 0.9rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            word-wrap: break-word;
+        }
+
+        .message.user .message-content {
+            background: #667eea;
+            color: #fff;
+            border-radius: 18px 18px 4px 18px;
+        }
+
+        .message.bot .message-content {
+            background: #e0e0e0;
+            color: #333;
+            border-radius: 18px 18px 18px 4px;
+        }
+
+        .chat-input-area {
+            padding: 0.8rem;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+        }
+
+        .chat-send {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .chat-send:hover {
+            background: #5568d3;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hotels-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .chat-widget {
+                width: 90%;
+                height: 400px;
+                left: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🏨 MogoHotel</div>
+        <ul>
+            <li><a href="#hotels">Hotels</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="btn-login">Sign In</button>
+            <button class="btn-book">Book Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience Luxury at Its Finest</h1>
+            <p>Discover our chain of premium hotels across Europe. Book your perfect stay today.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Explore Hotels</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2 class="section-title">Why Choose MogoHotel?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Premium Quality</h3>
+                    <p>World-class service and luxury accommodations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Multiple Locations</h3>
+                    <p>Hotels in Prague, Budapest, Tallinn, and Riga.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive rates and special offers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section class="hotels" id="hotels">
+        <div class="hotels-container">
+            <h2 class="section-title">Our Hotels</h2>
+            <div class="hotels-grid">
+                <div class="hotel-card">
+                    <div class="hotel-image">🏰</div>
+                    <div class="hotel-info">
+                        <h3>Prague Castle</h3>
+                        <div class="hotel-rating">⭐⭐⭐⭐⭐ (4.8/5)</div>
+                        <div class="hotel-price">€120/night</div>
+                        <p class="hotel-description">Historic luxury hotel in Prague.</p>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-image">🏛️</div>
+                    <div class="hotel-info">
+                        <h3>Budapest Danube</h3>
+                        <div class="hotel-rating">⭐⭐⭐⭐⭐ (4.9/5)</div>
+                        <div class="hotel-price">€135/night</div>
+                        <p class="hotel-description">Elegant riverside hotel.</p>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-image">🏯</div>
+                    <div class="hotel-info">
+                        <h3>Tallinn Old Town</h3>
+                        <div class="hotel-rating">⭐⭐⭐⭐ (4.7/5)</div>
+                        <div class="hotel-price">€110/night</div>
+                        <p class="hotel-description">Charming medieval hotel.</p>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-image">🎭</div>
+                    <div class="hotel-info">
+                        <h3>Riga Palace</h3>
+                        <div class="hotel-rating">⭐⭐⭐⭐⭐ (4.8/5)</div>
+                        <div class="hotel-price">€105/night</div>
+                        <p class="hotel-description">Modern luxury hotel.</p>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MogoHotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h3>💬 MogoHotel Assistant</h3>
+            <button class="chat-close" id="chatClose">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    Hi! I'm your MogoHotel assistant. How can I help you today?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input 
+                type="text" 
+                class="chat-input" 
+                id="chatInput" 
+                placeholder="Type your message..."
+                autocomplete="off"
+            >
+            <button class="chat-send" id="chatSend">📤</button>
+        </div>
+    </div>
+
+    <script>
+        const chatClose = document.getElementById('chatClose');
+        const chatWidget = document.getElementById('chatWidget');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+
+        chatClose.addEventListener('click', () => {
+            chatWidget.style.display = 'none';
+        });
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user';
+            userMessageDiv.innerHTML = `<div class="message-content">${escapeHtml(message)}</div>`;
+            chatMessages.appendChild(userMessageDiv);
+
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Здесь подключаешь n8n
+            const n8nWebhookUrl = 'YOUR_N8N_WEBHOOK_URL';
+            
+            setTimeout(() => {
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.className = 'message bot';
+                botMessageDiv.innerHTML = `<div class="message-content">Thanks for your message! Connect your n8n webhook to get real responses.</div>`;
+                chatMessages.appendChild(botMessageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        }
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+    </script>
+</body>
+</html>
