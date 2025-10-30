@@ -1,7 +1,7 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><!
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MogoHotel - Luxury Hotel Chain</title>
     <style>
@@ -359,17 +359,18 @@ DOCTYPE html>
         .chat-widget {
             position: fixed;
             bottom: 20px;
-            right: 20px;
-            width: 350px;
-            height: 500px;
+            left: 20px;
+            width: 320px;
+            height: 450px;
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
             display: flex;
             flex-direction: column;
-            z-index: 1000;
+            z-index: 10000;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             animation: slideUp 0.3s ease-out;
+            pointer-events: auto;
         }
 
         @keyframes slideUp {
@@ -506,7 +507,7 @@ DOCTYPE html>
         .chat-toggle {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 20px;
             width: 60px;
             height: 60px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -516,7 +517,7 @@ DOCTYPE html>
             font-size: 1.5rem;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 999;
+            z-index: 9999;
             transition: transform 0.3s;
             display: flex;
             align-items: center;
@@ -753,7 +754,7 @@ DOCTYPE html>
     <button class="chat-toggle" id="chatToggle">💬</button>
 
     <!-- Chat Widget -->
-    <div class="chat-widget" id="chatWidget" style="display: none;">
+    <div class="chat-widget" id="chatWidget" style="display: flex;">
         <div class="chat-header">
             <h3>MogoHotel Assistant</h3>
             <button class="chat-close" id="chatClose">×</button>
