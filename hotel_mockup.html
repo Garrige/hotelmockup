@@ -13,14 +13,15 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #333;
+            overflow-x: hidden;
         }
 
         /* Navigation */
         nav {
             background: #1a1a1a;
-            padding: 1rem 2rem;
+            padding: 0.8rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -30,7 +31,7 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #fff;
             letter-spacing: 2px;
@@ -39,13 +40,13 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: color 0.3s;
         }
 
@@ -55,17 +56,22 @@
 
         .nav-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
+        }
+
+        .btn-login, .btn-book {
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: all 0.3s;
         }
 
         .btn-login {
             background: transparent;
             color: #fff;
             border: 1px solid #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
         }
 
         .btn-login:hover {
@@ -77,55 +83,29 @@
             background: #ff6b6b;
             color: #fff;
             border: none;
-            padding: 0.5rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
         }
 
         .btn-book:hover {
             background: #e55555;
         }
 
-        /* Hero Section */
+        /* Hero Section - КОМПАКТНЕЕ */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
-            padding: 8rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             opacity: 0.95;
         }
 
@@ -133,36 +113,31 @@
             display: flex;
             gap: 1rem;
             justify-content: center;
-            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
         }
 
         .btn-primary {
             background: #ff6b6b;
             color: #fff;
             border: none;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.3s, background 0.3s;
         }
 
         .btn-primary:hover {
             background: #e55555;
-            transform: translateY(-2px);
         }
 
         .btn-secondary {
             background: transparent;
             color: #fff;
             border: 2px solid #fff;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
         }
 
         .btn-secondary:hover {
@@ -170,9 +145,9 @@
             color: #667eea;
         }
 
-        /* Features Section */
+        /* Features Section - КОМПАКТНЕЕ */
         .features {
-            padding: 4rem 2rem;
+            padding: 2.5rem 2rem;
             background: #f8f9fa;
         }
 
@@ -182,50 +157,50 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             color: #1a1a1a;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
         .feature-card {
             background: #fff;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .feature-card h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             color: #667eea;
+            font-size: 1rem;
         }
 
         .feature-card p {
             color: #666;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
 
-        /* Hotels Section */
+        /* Hotels Section - КОМПАКТНЕЕ */
         .hotels {
-            padding: 4rem 2rem;
+            padding: 2.5rem 2rem;
         }
 
         .hotels-container {
@@ -235,61 +210,61 @@
 
         .hotels-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
         .hotel-card {
             border-radius: 8px;
             overflow: hidden;
             background: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
         .hotel-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
         }
 
         .hotel-image {
             width: 100%;
-            height: 200px;
+            height: 140px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
         }
 
         .hotel-info {
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .hotel-info h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             color: #1a1a1a;
+            font-size: 0.95rem;
         }
 
         .hotel-rating {
             color: #ff6b6b;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.8rem;
         }
 
         .hotel-price {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: bold;
             color: #667eea;
-            margin: 0.5rem 0;
+            margin: 0.3rem 0;
         }
 
         .hotel-description {
             color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
         }
 
         .btn-view {
@@ -297,10 +272,11 @@
             background: #667eea;
             color: #fff;
             border: none;
-            padding: 0.7rem;
+            padding: 0.6rem;
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 0.85rem;
             transition: background 0.3s;
         }
 
@@ -308,11 +284,11 @@
             background: #5568d3;
         }
 
-        /* Footer */
+        /* Footer - КОМПАКТНЕЕ */
         footer {
             background: #1a1a1a;
             color: #fff;
-            padding: 3rem 2rem;
+            padding: 2rem 2rem 1rem 2rem;
             text-align: center;
         }
 
@@ -320,15 +296,16 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
             text-align: left;
         }
 
         .footer-section h4 {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: #ff6b6b;
+            font-size: 0.95rem;
         }
 
         .footer-section ul {
@@ -338,9 +315,9 @@
         .footer-section a {
             color: #ccc;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             transition: color 0.3s;
         }
 
@@ -350,12 +327,13 @@
 
         .footer-bottom {
             border-top: 1px solid #333;
-            padding-top: 2rem;
+            padding-top: 1rem;
             text-align: center;
             color: #999;
+            font-size: 0.8rem;
         }
 
-        /* Chat Widget */
+        /* Chat Widget - ФИКСИРОВАННАЯ ПОЗИЦИЯ */
         .chat-widget {
             position: fixed;
             bottom: 20px;
@@ -369,19 +347,6 @@
             flex-direction: column;
             z-index: 10000;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            animation: slideUp 0.3s ease-out;
-            pointer-events: auto;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .chat-header {
@@ -418,25 +383,13 @@
             padding: 1rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.8rem;
             background: #f5f5f5;
         }
 
         .message {
             display: flex;
-            margin-bottom: 0.5rem;
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            margin-bottom: 0.3rem;
         }
 
         .message.user {
@@ -445,10 +398,10 @@
 
         .message-content {
             max-width: 70%;
-            padding: 0.75rem 1rem;
+            padding: 0.7rem 0.9rem;
             border-radius: 12px;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            font-size: 0.85rem;
+            line-height: 1.3;
             word-wrap: break-word;
         }
 
@@ -465,7 +418,7 @@
         }
 
         .chat-input-area {
-            padding: 1rem;
+            padding: 0.8rem;
             border-top: 1px solid #e0e0e0;
             display: flex;
             gap: 0.5rem;
@@ -476,7 +429,7 @@
             border: 1px solid #ddd;
             border-radius: 20px;
             padding: 0.5rem 1rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             outline: none;
             transition: border-color 0.3s;
         }
@@ -496,7 +449,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: background 0.3s;
         }
 
@@ -504,84 +457,23 @@
             background: #5568d3;
         }
 
-        .chat-toggle {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 50%;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 9999;
-            transition: transform 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .chat-toggle:hover {
-            transform: scale(1.1);
-        }
-
-        .chat-toggle.hidden {
-            display: none;
-        }
-
-        .typing-indicator {
-            display: flex;
-            gap: 4px;
-            align-items: center;
-        }
-
-        .typing-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #999;
-            animation: typing 1.4s infinite;
-        }
-
-        .typing-dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .typing-dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes typing {
-            0%, 60%, 100% {
-                opacity: 0.5;
-            }
-            30% {
-                opacity: 1;
-            }
-        }
-
         @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hotels-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             .chat-widget {
-                width: 100%;
-                height: 100%;
-                bottom: 0;
-                right: 0;
-                border-radius: 0;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .features-grid, .hotels-grid {
-                grid-template-columns: 1fr;
+                width: 90%;
+                height: 400px;
+                left: 5%;
             }
         }
     </style>
@@ -622,32 +514,17 @@
                 <div class="feature-card">
                     <div class="feature-icon">⭐</div>
                     <h3>Premium Quality</h3>
-                    <p>Experience world-class service and luxury accommodations at all our properties.</p>
+                    <p>World-class service and luxury accommodations.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <h3>Multiple Locations</h3>
-                    <p>Choose from our collection of hotels in Prague, Budapest, Tallinn, and Riga.</p>
+                    <p>Hotels in Prague, Budapest, Tallinn, and Riga.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>Best Prices</h3>
-                    <p>Get the best value for your money with our competitive rates and special offers.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎁</div>
-                    <h3>Loyalty Rewards</h3>
-                    <p>Earn points on every booking and enjoy exclusive member benefits.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛎️</div>
-                    <h3>24/7 Support</h3>
-                    <p>Our dedicated team is always ready to assist you with any questions.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✈️</div>
-                    <h3>Easy Booking</h3>
-                    <p>Simple and secure booking process. Reserve your room in just a few clicks.</p>
+                    <p>Competitive rates and special offers.</p>
                 </div>
             </div>
         </div>
@@ -659,45 +536,45 @@
             <h2 class="section-title">Our Hotels</h2>
             <div class="hotels-grid">
                 <div class="hotel-card">
-                    <div class="hotel-image">🏰 Prague Castle Hotel</div>
+                    <div class="hotel-image">🏰</div>
                     <div class="hotel-info">
-                        <h3>Prague Castle Hotel</h3>
+                        <h3>Prague Castle</h3>
                         <div class="hotel-rating">⭐⭐⭐⭐⭐ (4.8/5)</div>
-                        <div class="hotel-price">From €120/night</div>
-                        <p class="hotel-description">Historic luxury hotel in the heart of Prague with stunning city views.</p>
+                        <div class="hotel-price">€120/night</div>
+                        <p class="hotel-description">Historic luxury hotel in Prague.</p>
                         <button class="btn-view">View Details</button>
                     </div>
                 </div>
 
                 <div class="hotel-card">
-                    <div class="hotel-image">🏛️ Budapest Danube Hotel</div>
+                    <div class="hotel-image">🏛️</div>
                     <div class="hotel-info">
-                        <h3>Budapest Danube Hotel</h3>
+                        <h3>Budapest Danube</h3>
                         <div class="hotel-rating">⭐⭐⭐⭐⭐ (4.9/5)</div>
-                        <div class="hotel-price">From €135/night</div>
-                        <p class="hotel-description">Elegant riverside hotel overlooking the Danube with spa facilities.</p>
+                        <div class="hotel-price">€135/night</div>
+                        <p class="hotel-description">Elegant riverside hotel.</p>
                         <button class="btn-view">View Details</button>
                     </div>
                 </div>
 
                 <div class="hotel-card">
-                    <div class="hotel-image">🏯 Tallinn Old Town Hotel</div>
+                    <div class="hotel-image">🏯</div>
                     <div class="hotel-info">
-                        <h3>Tallinn Old Town Hotel</h3>
+                        <h3>Tallinn Old Town</h3>
                         <div class="hotel-rating">⭐⭐⭐⭐ (4.7/5)</div>
-                        <div class="hotel-price">From €110/night</div>
-                        <p class="hotel-description">Charming hotel in medieval Old Town with local character.</p>
+                        <div class="hotel-price">€110/night</div>
+                        <p class="hotel-description">Charming medieval hotel.</p>
                         <button class="btn-view">View Details</button>
                     </div>
                 </div>
 
                 <div class="hotel-card">
-                    <div class="hotel-image">🎭 Riga Palace Hotel</div>
+                    <div class="hotel-image">🎭</div>
                     <div class="hotel-info">
-                        <h3>Riga Palace Hotel</h3>
+                        <h3>Riga Palace</h3>
                         <div class="hotel-rating">⭐⭐⭐⭐⭐ (4.8/5)</div>
-                        <div class="hotel-price">From €105/night</div>
-                        <p class="hotel-description">Modern luxury hotel in Art Nouveau center with contemporary design.</p>
+                        <div class="hotel-price">€105/night</div>
+                        <p class="hotel-description">Modern luxury hotel.</p>
                         <button class="btn-view">View Details</button>
                     </div>
                 </div>
@@ -713,8 +590,6 @@
                 <ul>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Press</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -722,26 +597,20 @@
                 <ul>
                     <li><a href="#">Help Center</a></li>
                     <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Feedback</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Legal</h4>
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Terms</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Follow Us</h4>
                 <ul>
                     <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
                     <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
                 </ul>
             </div>
         </div>
@@ -750,19 +619,16 @@
         </div>
     </footer>
 
-    <!-- Chat Widget Toggle Button -->
-    <button class="chat-toggle" id="chatToggle">💬</button>
-
     <!-- Chat Widget -->
-    <div class="chat-widget" id="chatWidget" style="display: flex;">
+    <div class="chat-widget" id="chatWidget">
         <div class="chat-header">
-            <h3>MogoHotel Assistant</h3>
+            <h3>💬 MogoHotel Assistant</h3>
             <button class="chat-close" id="chatClose">×</button>
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="message bot">
                 <div class="message-content">
-                    👋 Hi! I'm your MogoHotel assistant. How can I help you today? Feel free to ask about our hotels, bookings, or anything else!
+                    Hi! I'm your MogoHotel assistant. How can I help you today?
                 </div>
             </div>
         </div>
@@ -779,112 +645,45 @@
     </div>
 
     <script>
-        // Chat Widget Logic
-        const chatToggle = document.getElementById('chatToggle');
-        const chatWidget = document.getElementById('chatWidget');
         const chatClose = document.getElementById('chatClose');
+        const chatWidget = document.getElementById('chatWidget');
         const chatMessages = document.getElementById('chatMessages');
         const chatInput = document.getElementById('chatInput');
         const chatSend = document.getElementById('chatSend');
 
-        // Toggle chat widget
-        chatToggle.addEventListener('click', () => {
-            chatWidget.style.display = chatWidget.style.display === 'none' ? 'flex' : 'none';
-            if (chatWidget.style.display === 'flex') {
-                chatInput.focus();
-            }
-        });
-
-        // Close chat widget
         chatClose.addEventListener('click', () => {
             chatWidget.style.display = 'none';
         });
 
-        // Send message function
         function sendMessage() {
             const message = chatInput.value.trim();
             if (message === '') return;
 
-            // Add user message to chat
             const userMessageDiv = document.createElement('div');
             userMessageDiv.className = 'message user';
             userMessageDiv.innerHTML = `<div class="message-content">${escapeHtml(message)}</div>`;
             chatMessages.appendChild(userMessageDiv);
 
-            // Clear input
             chatInput.value = '';
-
-            // Scroll to bottom
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Show typing indicator
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'message bot';
-            typingDiv.innerHTML = `
-                <div class="message-content">
-                    <div class="typing-indicator">
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                    </div>
-                </div>
-            `;
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            // Send to your n8n API
-            // Replace 'YOUR_N8N_WEBHOOK_URL' with your actual n8n webhook
+            // Здесь подключаешь n8n
             const n8nWebhookUrl = 'YOUR_N8N_WEBHOOK_URL';
-
-            fetch(n8nWebhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    message: message
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Remove typing indicator
-                typingDiv.remove();
-
-                // Add bot response
+            
+            setTimeout(() => {
                 const botMessageDiv = document.createElement('div');
                 botMessageDiv.className = 'message bot';
-                botMessageDiv.innerHTML = `<div class="message-content">${escapeHtml(data.response || 'Sorry, I couldn\'t process that. Please try again.')}</div>`;
+                botMessageDiv.innerHTML = `<div class="message-content">Thanks for your message! Connect your n8n webhook to get real responses.</div>`;
                 chatMessages.appendChild(botMessageDiv);
-
-                // Scroll to bottom
                 chatMessages.scrollTop = chatMessages.scrollHeight;
-            })
-            .catch(error => {
-                // Remove typing indicator
-                typingDiv.remove();
-
-                // Add error message
-                const errorMessageDiv = document.createElement('div');
-                errorMessageDiv.className = 'message bot';
-                errorMessageDiv.innerHTML = `<div class="message-content">Sorry, I couldn't connect. Please check back later.</div>`;
-                chatMessages.appendChild(errorMessageDiv);
-
-                console.error('Error:', error);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            });
+            }, 500);
         }
 
-        // Send on button click
         chatSend.addEventListener('click', sendMessage);
-
-        // Send on Enter key
         chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
+            if (e.key === 'Enter') sendMessage();
         });
 
-        // Escape HTML to prevent XSS
         function escapeHtml(text) {
             const map = {
                 '&': '&amp;',

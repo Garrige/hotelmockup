@@ -1,58 +1,42 @@
 import streamlit as st
 
-# Конфиг страницы - убирает белые полосы и прячет интерфейс Streamlit
 st.set_page_config(
     page_title="MogoHotel",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
-# CSS чтобы убрать белые полосы и максимизировать контент
+# CSS для убирания всех отступов и белых полос
 st.markdown("""
 <style>
-    /* Убираем отступы */
-    .appview-container {
-        padding: 0 !important;
-    }
-    
-    .main {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    
-    .st-emotion-cache-1wbqy5l {
-        padding: 0 !important;
-    }
-    
-    /* Прячем Streamlit UI */
-    #MainMenu {
-        visibility: hidden;
-    }
-    
-    footer {
-        visibility: hidden;
-    }
-    
-    header {
-        visibility: hidden;
-    }
-    
-    .stDeployButton {
-        display: none;
-    }
-    
-    /* Убираем мин-высоту */
-    .block-container {
+    /* Убираем ВСЕ отступы */
+    .main, .block-container, .appview-container {
         padding: 0 !important;
         margin: 0 !important;
         max-width: 100% !important;
     }
+    
+    /* Прячем Streamlit UI */
+    #MainMenu, footer, header, .stDeployButton {
+        visibility: hidden;
+        display: none;
+    }
+    
+    /* Убираем iframe padding */
+    iframe {
+        border: none !important;
+    }
+    
+    /* Растягиваем на весь экран */
+    section[data-testid="stVerticalBlock"] {
+        gap: 0 !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
-# Загрузи HTML
-with open('hotel_mockup.html', 'r', encoding='utf-8') as f:
+# Загружаем HTML
+with open('hotel_mockup_compact.html', 'r', encoding='utf-8') as f:
     html_content = f.read()
 
-# Показывай HTML на весь экран
-st.components.v1.html(html_content, height=4000, scrolling=True)
+# Показываем с правильной высотой (без белого пространства)
+st.components.v1.html(html_content, height=1800, scrolling=False)
